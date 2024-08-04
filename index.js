@@ -180,6 +180,21 @@
 // factr(1)
 // document.write(`The Factorial of ${prom} is ${facct}`)
 // -----------------------------------------------------------
+// let userFactorialNumber = +prompt("enter your factorial number")
+
+// const factorial = (num) => {
+//     if(num === 0){
+//         return 1
+//     }
+//     else{
+//         return num * factorial(num - 1)
+//     }
+// }
+
+// let res = factorial(userFactorialNumber)
+// console.log(res , `<<<<< The Factorial of ${userFactorialNumber} is: ${res} `)
+
+// -----------------------------------------------------------
 
 // let num = prompt("enter a number");
 
@@ -319,3 +334,86 @@
 // let inputString = "javascript"
 // let result = mostReapetedChar(inputString);
 // console.log(result, "<<<< result")
+
+
+// Q9: find most repeated element  array?
+
+
+// function mostRepeatedFunction(arr) {
+//     let frequency = {}
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let element = arr[i]
+//         console.log(element)
+//         if (frequency[element]) {
+//             frequency[element]++
+//         } else {
+//             frequency[element] = 1
+//         }
+//     }
+
+//     let maxCount = 0;
+//     let mostReapeted = null;
+
+//     for(let element in frequency){
+//         console.log(element , frequency)
+//         if(frequency[element] > maxCount){
+//             console.log(element , frequency[element])
+//             maxCount = frequency[element];
+//             mostReapeted = element
+//         }
+//         console.log(maxCount , mostReapeted)
+//     }
+//     return mostReapeted
+// }
+
+// // let inputArray = ["jawad","jawad","asad","asad","ali","jawad","asad","asad","jawad"];
+// let inputArray = [1,1,3,2,4,3,5,4,5,4,6,7,6,6,6,6,7,4,];
+
+// let result = mostRepeatedFunction(inputArray);
+
+// console.log(`this input is most repeated value is ${result}`)
+
+
+// ------------------------clusure--------------------------------
+
+// function makeFunc() {
+//     const name = "jawad"
+
+//     function innerFunc(){
+//         console.log(name)
+//     }
+//     return innerFunc;
+// }
+
+// const myFunc = makeFunc();
+
+// myFunc();
+
+// --------lexical-------------
+
+// function outerFunc() {
+//     const name = "jawad";
+//     function inner() {
+//         console.log("inner1", name)
+//     }
+//     function innertwo() {
+//         console.log("inner2", name)
+//     }
+
+//     inner()
+//     innertwo()
+// }
+
+// outerFunc();
+
+// ----------------- clusure practice ---------------
+
+function clickHandler(color) {
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+
+document.getElementById("orange").addEventListener("click", clickHandler("orange"))
+document.getElementById("green").addEventListener("click", clickHandler("green"))
