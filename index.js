@@ -409,11 +409,20 @@
 
 // ----------------- clusure practice ---------------
 
-function clickHandler(color) {
-    return function(){
-        document.body.style.backgroundColor = `${color}`
-    }
-}
+// function clickHandler(color) {
+//     return function(){
+//         document.body.style.backgroundColor = `${color}`
+//     }
+// }
 
-document.getElementById("orange").addEventListener("click", clickHandler("orange"))
-document.getElementById("green").addEventListener("click", clickHandler("green"))
+// document.getElementById("orange").addEventListener("click", clickHandler("orange"))
+// document.getElementById("green").addEventListener("click", clickHandler("green"))
+
+
+
+// ------------------------ Object Oriented 4 Pillars ---------------------
+
+// Abstraction
+// Encapsulation
+// Inheritance
+// Polymorphism
