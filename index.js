@@ -61,7 +61,7 @@
 //Ans:01
 
 // let array = [10, 20, 30, 40, 90, 100, 55, 500, 65, 75];
-// let max = Infinity;
+// let max = -Infinity;
 //               // 9      // 10
 // for (let i = 0; i < array.length; i++) {
 //     console.log("i =>>",i)
@@ -250,7 +250,7 @@
 
 // -----------------------------------------
 
-// Q7 : find most repeated element or deleted from array?
+// Q8 : find most repeated element or deleted from array?
 
 // let num = [2,4,9,10,110,10,2,4,2,4,5,110,555];
 // let num = [1,2,3,4,4,5,6,5,6,7,9,0,10,100,101,20];
@@ -264,11 +264,18 @@
 //     }
 // }
 
+// for(let value of num){
+//     if(forOff.indexOf(value === -1)){
+//         forOff.push(value)
+//     }
+// }
+
 // for(let i = 0; i < num.length; i++){
 //     if(!uniquw.includes(num[i])){
 //         uniquw.push(num[i])
 //     }
 // }
+
 
 // for(let j = 0; j < num.length; j++){
 //     if(!third.includes(num[j])){
@@ -280,7 +287,7 @@
 // console.log(forOff , "<<<< forOff")
 // console.log(third , "<<<< third")
 
-// Q8: find most repeated element  string?
+// Q9: find most repeated element  string?
 
 // function getCharString(str) {
 
@@ -303,7 +310,7 @@
 
 // console.log(res)
 
-// ---------------------------------- Palindrome-Checker-Game/blob/master/script.js
+// ---------------------------------- 
 
 // function mostReapetedChar(str) {
 //     let frequency = {};
@@ -336,7 +343,7 @@
 // console.log(result, "<<<< result")
 
 
-// Q9: find most repeated element  array?
+// Q10: find most repeated element  array?
 
 
 // function mostRepeatedFunction(arr) {
@@ -374,6 +381,19 @@
 
 // console.log(`this input is most repeated value is ${result}`)
 
+// -------------------------------------------------------------
+
+//Q11 find the missing element or number in array without using any building function in javascript
+
+// let array = [1,2,3,5,6];
+
+// let total = ((array.length + 1) * (array.length +2)) / 2
+
+// for(let i = 0; i < array.length; i++){
+//     total = total - array[i];
+// }
+
+// console.log(total)
 
 // ------------------------clusure--------------------------------
 
