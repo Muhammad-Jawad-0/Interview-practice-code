@@ -202,7 +202,141 @@
 
 // console.log(total)
 
+// Q12 : first letter capital in string without using any building function?
+
+// let str = "jawad asad raza";
+// let word = str.split(" ")
+// let newArr = []
+
+// for (let i = 0; i < word.length; i++) {
+//     let result = word[i][0].toUpperCase() + word[i].slice(1)
+//     newArr.push(result)
+// }
+
+// console.log(newArr.join(" "))
+
+// ======================================
+
+// let str = "jawad iqra muskan";
+// console.log(str)
+// let word = str.split(" ")
+// let arr = []
+
+// for (let i = 0; i < word.length; i++) {
+//     let result = word[i][0].toUpperCase() + word[i].slice(1)
+//     arr.push(result)
+// }
+// let result = arr.join(" ")
+
+// console.log(result)
 // ------------------------------------------------------------
+
+// let str = "my name is muhammad jawad";
+
+// let words = str.split(" ")
+// let arr = [];
+
+// for (let i = 0; i < words.length; i++) {
+//     let result = words[i][0].toUpperCase() + words[i].slice(1)
+//     arr.push(result)
+// }
+// let finalResult = arr.join(" ")
+// console.log(finalResult) // [output]: My Name Is Muhammad Jawad
+
+
+// ----------------------------------------------------------------
+
+// Q13: added a word in string without using any building function?
+
+
+// let str = "hello, my name is Muhammad Jawad";
+
+// for (let i = 0; i < str.length; i++) {
+//     console.log(str.slice(i, i + 8))
+//     if (str.slice(i, i + 8) == "Muhammad") {
+//         str = str.slice(0, i) + "SMIT Studend " + str.slice(i);
+//         break;
+//     }
+// }
+// let finalResult = str
+
+// console.log(finalResult) //  output: hello, my name is SMIT Studend Muhammad Jawad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ========================================= QUIZ Practice
 
@@ -228,7 +362,7 @@
 // console.log(age); // Output? // 25
 
 
-//  Q4 
+//  Q4
 
 // let name = "John";
 // let greeting = `Hello, ${name}!`;
@@ -253,7 +387,7 @@
 // counter(); // Output?
 // counter(); // Output?
 
-// Q6 
+// Q6
 
 // const person = {
 //     name: "Charlie",
@@ -262,11 +396,11 @@
 
 // const { name, age, gender = "male" } = person;
 // console.log(name); // Output? Charlie
-// console.log(age); // Output? 30 
+// console.log(age); // Output? 30
 // console.log(gender); // Output? male
 
 
-// Q7 
+// Q7
 
 // function applyOperation(arr, operation) {
 //     return arr.map(operation);
@@ -281,3 +415,56 @@
 // //Ans
 
 // [1, 4, 9]
+
+// function calculateDistance() {
+//     let initialDistance = 10; // Distance on day 1
+//     let decrement = 3;        // Distance reduced each day
+//     let totalDistance = 0;    // Total distance covered
+//     let day = 0;              // Days count
+
+//     while (initialDistance > 0) {
+//         totalDistance += initialDistance; // Add the distance of the current day to total distance
+//         initialDistance -= decrement;    // Reduce the distance for the next day
+//         day++;                           // Increment the day count
+//     }
+
+//     console.log(`Total days: ${day}`);
+//     console.log(`Total distance covered: ${totalDistance} km`);
+// }
+
+// calculateDistance();
+
+
+// let x = 5;
+// let y = x++;
+// console.log( "x",x, "y", y);
+
+
+// let arr = [1, 2, 3];
+// arr.length = 0;
+// console.log(arr);
+
+// --------------------nisum test question
+
+// let arr = [2, 3, 4, 5, 7, 8, 10];
+// let newArr = []
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === 2) {
+//         newArr.push(arr[i])
+//     }
+//     if (arr[i] === 3) {
+//         newArr.push(arr[i])
+//     }
+//     if (arr[i] === 5) {
+//         newArr.push(arr[i])
+//     }
+//     if (arr[i] === 7) {
+//         newArr.push(arr[i])
+//     }
+// }
+
+// console.log(newArr)
+
+
+// -----------------------------------------
