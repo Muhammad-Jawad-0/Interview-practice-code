@@ -166,14 +166,61 @@
 
 // ---------------------Constructor Function -------------------------
 
-function Studend(firstName, LastName) {
-  this.firstName = firstName;
-  this.LastName = LastName;
-  this.getFullName = function () {
-    return `${firstName} ${LastName}`
-  }
+// function Studend(firstName, LastName) {
+//   this.firstName = firstName;
+//   this.LastName = LastName;
+//   this.getFullName = function () {
+//     return `${this.firstName} ${this.LastName}`
+//   }
+// }
+
+// var student = new Studend("Muhammad", "Jawad");
+// var student1 = new Studend("Iqra", "Noor");
+
+// console.log(student.getFullName())
+// console.log(student)
+// console.log(student1.getFullName())
+// console.log(student1)
+
+// -------- method & function ko prototype ma rakhne ka tarika issy performance achi huti ha -----------
+
+// function Studend(firstName, LastName) {
+//   this.firstName = firstName;
+//   this.LastName = LastName;
+// }
+
+// Studend.prototype.getFullName = function () {
+//   return `${this.firstName} ${this.LastName}`
+// }
+
+
+// var student = new Studend("Muhammad", "Jawad");
+// // console.log(Object.entries(student))
+
+// // console.log(student.getFullName())
+
+// for(let keys in student){
+//   console.log(student[keys])
+// }
+
+// ------------------------ file inputs create url practice ----------------
+
+// function fileSubmit() {
+//   let image = document.getElementById("image")
+//   let file = document.getElementById("file")
+//   let createUrl = URL.createObjectURL(file.files[0])
+
+//   image.src = createUrl
+//   console.log()
+// }
+
+// -------- radio or checkbox 2no ma same tarike se value get krte ha -------------
+
+function submit() {
+    let gender = document.getElementsByName("gender");
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            console.log(gender[i].value)
+        }
+    }
 }
-
-var student = new Studend("Muhammad", "Jawad");
-
-console.log(student)
