@@ -20,3 +20,9 @@
     zoom: 2;
     object-fit: contain;
 } */
+
+.edit-input{
+    border: none;
+    background: transparent;
+    color: #000;
+}

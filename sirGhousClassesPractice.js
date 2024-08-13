@@ -13,7 +13,7 @@
 // //     var num = 317;
 // // }
 
-// // console.log(num) //  ye acces ha 
+// // console.log(num) //  ye acces ha
 
 // // ------------------------------------------------
 
@@ -55,7 +55,7 @@
 // //     car.className = "car"
 // // }
 
-// // ======================================== ye 2sra tarika ha 
+// // ======================================== ye 2sra tarika ha
 
 // // let zoom = false
 // // function zoomIn(){
@@ -71,67 +71,109 @@
 
 // // }
 
-// // ---------------------------------------------// create todo app with pure javascript 
+// // ---------------------------------------------// create todo app with pure javascript
 
+// function addTodo() {
+//   let input = document.getElementById("input");
+//   let ul = document.getElementById("ul");
+//   let date = new Date()
 
-function addTodo() {
-    let input = document.getElementById("input");
-    let ul = document.getElementById("ul");
+//   ul.innerHTML = `
+//     <li>
+//     <input class="edit-input" type="text" value="${input.value}" disabled/>
+//     ${date.toLocaleString()}
+//     <button onclick="deleteTodo()">Delete</button>
+//     <button onclick="editTodo(this)">Edit</button>
+//     </li>
+//     `;
 
-    let li = document.createElement("li");
-    let liText = document.createTextNode(input.value);
-    li.appendChild(liText);
+// -------------------------------------------------
 
-    // Create Edit button
-    let liEditBtn = document.createElement("button");
-    let liEditBtnText = document.createTextNode("Edit");
-    liEditBtn.appendChild(liEditBtnText);
-    liEditBtn.setAttribute("onclick", "editTodo(this)");
+// let li = document.createElement("li");
+// let liText = document.createTextNode(input.value);
+// li.appendChild(liText);
 
-    // Create Delete button
-    let liDeleteBtn = document.createElement("button");
-    let liDeleteBtnText = document.createTextNode("Delete");
-    liDeleteBtn.appendChild(liDeleteBtnText);
-    liDeleteBtn.setAttribute("onclick", "deleteTodo()");
+// // Create Edit button
+// let liEditBtn = document.createElement("button");
+// let liEditBtnText = document.createTextNode("Edit");
+// liEditBtn.appendChild(liEditBtnText);
+// liEditBtn.setAttribute("onclick", "editTodo(this)");
 
-    li.appendChild(liEditBtn);
-    li.appendChild(liDeleteBtn);
+// // Create Delete button
+// let liDeleteBtn = document.createElement("button");
+// let liDeleteBtnText = document.createTextNode("Delete");
+// liDeleteBtn.appendChild(liDeleteBtnText);
+// liDeleteBtn.setAttribute("onclick", "deleteTodo()");
 
-    ul.prepend(li);
+// li.appendChild(liEditBtn);
+// li.appendChild(liDeleteBtn);
 
-    input.value = "";
+// ul.prepend(li);
+
+//   input.value = "";
+// }
+
+// function deleteTodo() {
+//   event.target.parentNode.remove();
+// }
+
+// function editTodo(editBtn) {
+//     let li = editBtn.parentNode;
+//     let currentText = li.firstChild.nodeValue;
+
+//     let inputField = document.createElement("input");
+//     inputField.type = "text";
+//     inputField.value = currentText;
+//     inputField.setAttribute("onblur", "saveEdit(this)");
+
+//     li.insertBefore(inputField, editBtn);
+//     li.removeChild(li.firstChild);
+
+//     inputField.focus();
+// }
+
+// function saveEdit(inputField) {
+//     let li = inputField.parentNode;
+//     let newText = inputField.value;
+
+//     let newTextNode = document.createTextNode(newText);
+
+//     li.insertBefore(newTextNode, inputField.nextSibling);
+//     li.removeChild(inputField);
+// }
+
+// let edit = false;
+// function editTodo(e) {
+//   if (edit) {
+//     e.parentNode.childNodes[1].disabled = true;
+//     e.parentNode.childNodes[1].blur();
+//     e.parentNode.childNodes[5].innerHTML = "Edit";
+//     edit = false
+//     console.log(e.parentNode.childNodes[5]);
+//   } else {
+//     e.parentNode.childNodes[1].disabled = false;
+//     e.parentNode.childNodes[1].focus();
+//     e.parentNode.childNodes[5].innerHTML = "Update";
+//     console.log(e.parentNode.childNodes[5]);
+//     edit = true
+//   }
+// }
+
+// function deleteAll() {
+//   let ul = document.getElementById("ul");
+//   ul.innerHTML = ""; // This removes all child elements (i.e., all <li> items)
+// }
+
+// ---------------------Constructor Function -------------------------
+
+function Studend(firstName, LastName) {
+  this.firstName = firstName;
+  this.LastName = LastName;
+  this.getFullName = function () {
+    return `${firstName} ${LastName}`
+  }
 }
 
-function deleteTodo() {
-    event.target.parentNode.remove();
-}
+var student = new Studend("Muhammad", "Jawad");
 
-function editTodo(editBtn) {
-    let li = editBtn.parentNode;
-    let currentText = li.firstChild.nodeValue;
-
-    let inputField = document.createElement("input");
-    inputField.type = "text";
-    inputField.value = currentText;
-    inputField.setAttribute("onblur", "saveEdit(this)");
-
-    li.insertBefore(inputField, editBtn);
-    li.removeChild(li.firstChild);
-
-    inputField.focus();
-}
-
-function saveEdit(inputField) {
-    let li = inputField.parentNode;
-    let newText = inputField.value;
-
-    let newTextNode = document.createTextNode(newText);
-
-    li.insertBefore(newTextNode, inputField.nextSibling);
-    li.removeChild(inputField);
-}
-
-function deleteAll() {
-    let ul = document.getElementById("ul");
-    ul.innerHTML = "";  // This removes all child elements (i.e., all <li> items)
-}
+console.log(student)
