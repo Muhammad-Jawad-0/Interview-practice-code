@@ -216,11 +216,24 @@
 
 // -------- radio or checkbox 2no ma same tarike se value get krte ha -------------
 
-function submit() {
-    let gender = document.getElementsByName("gender");
-    for (let i = 0; i < gender.length; i++) {
-        if (gender[i].checked) {
-            console.log(gender[i].value)
-        }
-    }
-}
+// function submit() {
+//     let gender = document.getElementsByName("gender");
+//     for (let i = 0; i < gender.length; i++) {
+//         if (gender[i].checked) {
+//             console.log(gender[i].value)
+//         }
+//     }
+// }
+
+// -------------------- localStorage ma object set or get krne ka tarika
+
+// let obj = {
+//     name: "Muhammad Jawad",
+//     roll: 126981
+// }
+
+// localStorage.setItem("information", JSON.stringify(obj))
+
+// let objGetFromLocalStorage = JSON.parse(localStorage.getItem("information"))
+
+// console.log(objGetFromLocalStorage)
