@@ -193,7 +193,6 @@
 //   return `${this.firstName} ${this.LastName}`
 // }
 
-
 // var student = new Studend("Muhammad", "Jawad");
 // // console.log(Object.entries(student))
 
@@ -237,3 +236,98 @@
 // let objGetFromLocalStorage = JSON.parse(localStorage.getItem("information"))
 
 // console.log(objGetFromLocalStorage)
+
+// let obj = {
+//   name: "Muhammad Jawad",
+//   age: 20,
+// };
+
+// let student = {
+//   email: "jawad@gmail.com",
+//   password: {
+//     pass: 25055909,
+//     cPass: 25055909,
+//   },
+// };
+
+// student.password.cPass = 250055999
+
+// let murge = { ...obj, ...student };
+
+// console.log(student)
+// console.log(murge);
+
+
+// ------------------ function ma obj ki practice ---------------
+
+// object or array ki value save nh huti balke reference save huta ha... agr update krna huta ha tu reference alag banate ha {}, [] se warna ik ki value update krege sbka hujaega is leye reference alag krna lazmi huta ha
+
+// function updatedArray(arr) {
+//     arr[1].name = "jawad";
+//     return arr
+// }
+
+// let obj = {
+//     name:"ghous"
+// }
+
+// let result = updatedArray([obj,obj,obj])
+
+// console.log("obj >>>", obj)
+
+// console.log("result >>" , result)
+
+// ------------------------------------------------
+
+// let obj = {
+//     name:"muhammad jawad",
+//     email:"jawad@gmail.com"
+// }
+
+// let obj1 = {...obj};
+
+// obj1.name = "asad raza"
+// obj1.email = "asad@gmail.com"
+
+// console.log("obj >>", obj)
+// console.log(">>>>",obj1)
+
+
+// ------------------------------=----------------
+// ==========>>>> nested obj ke leye bhi alag reference banta ha warna value alag chnge nh krega
+
+// let obj = {
+//     name: "muhammad jawad",
+//     detail: {
+//         email: "jawad@gmail.com"
+//     }
+// }
+
+// let obj1 = { ...obj, detail: {...obj.detail} };
+
+// obj.name = "asad raza"
+// obj.detail.email = "asad@gmail.com"
+
+// console.log("obj >>", obj)
+// console.log(">>>>", obj1)
+
+// -------------------- class constructor ----------------
+
+class StudendList {
+    constructor(firstName, lastName, fatherName, roll) {
+        this.firstName = firstName;
+        this.lastNameName = lastName;
+        this.fatherNameName = fatherName;
+        this.roll = roll;
+    }
+}
+
+let jawadDetail = new StudendList("Muhammad", "Jawad", "Nooruddin", 126981)
+let asadDetail = new StudendList("Muhammad", "asad", "zainul abdien", 126982)
+let aliDetail = new StudendList("Muhammad", "ali", "jamshad", 126983)
+let hammadDetail = new StudendList("Muhammad", "hammad", "shanwari", 126984)
+
+console.log(jawadDetail)
+console.log(asadDetail)
+console.log(aliDetail)
+console.log(hammadDetail)
