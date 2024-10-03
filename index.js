@@ -34,8 +34,7 @@
 
 // Q1 : swap the values of variables a and b in JavaScript without using a third variable?
 
-
-// //Ans 01: 
+// //Ans 01:
 // let a = 15;
 // let b = 20;
 
@@ -53,8 +52,7 @@
 // c = c - d;
 
 // console.log("c:", c); // Output: 30
-// console.log("d:", d); // Output: 25 
-
+// console.log("d:", d); // Output: 25
 
 //Q2 : find the largest value in the array without using any built-in function in JavaScript?
 
@@ -75,7 +73,7 @@
 
 //Q3 : sort the any number or string value in the array without using any built-in function in JavaScript?
 
-// let numArray = [20, 2, 9, 1, 78, 505, 3, 600, 101, 200, 70,];
+// let numArray = [20, 2, 9, 1, 78, 505,8, 3, 600, 101, 200, 70,];
 // let numArray = ["jawad", "asad", "zaid", "raza", "ali","abid"];
 // let tempValue;
 
@@ -91,12 +89,6 @@
 
 // console.log(numArray)
 
-
-
-
-
-
-
 // Q4 : reverse the value in the array without using any built-in function in JavaScript?
 
 // let numbers = [34, 7, 23, 32, 5, 62, 202, 101];
@@ -107,13 +99,11 @@
 //     // newArr.push(numbers[i])
 //     console.log( numbers[i])
 // }
-// // console.log(newArr)
-
-
+// console.log(newArr)
 
 // Q5 find second largest element from array  in js without any arrays method?
 
-// // let numbers = [34, 7, 23, 32, 5, 62, 101, 202];
+// let numbers = [34, 7, 23, 32, 5, 62, 101, 202];
 // let numbers = [34, 7, 23, 32, 400, 5, 62, 202, 101, 300];
 // let n = numbers.length;
 
@@ -127,12 +117,12 @@
 //     if (numbers[i] > highest) {
 //         secondHighest = highest;
 //         highest = numbers[i]
-//         console.log("first >>>", secondHighest,highest)
+//         // console.log("first >>>", secondHighest,highest)
 //     }
 //     if(numbers[i] > secondHighest && numbers[i] < highest){
-//         console.log("second", secondHighest,highest)
+//         // console.log("second", secondHighest,highest)
 //         secondHighest = numbers[i]
-//         console.log("second", secondHighest,highest)
+//         // console.log("second", secondHighest,highest)
 
 //     }
 //     // if (secondHighest < numbers[i] && highest > numbers[i]) {
@@ -141,11 +131,12 @@
 //     // }
 // }
 
-// console.log(`=====>>>>>`, highest, secondHighest)
+// console.log(`=====>>>>>Highest`, highest,`=====>>>>>Second`, secondHighest)
 
 // Q6 factorial using recursion ?
 
 // let factNumber = prompt("Enter a number");
+// let factNumber = 5;
 // let fact = 1;
 
 // function factorial(n) {
@@ -161,6 +152,20 @@
 // factorial(1)
 
 // console.log(`The Factorial of ${factNumber} is ${fact}`)
+
+// ----------------------------------------------------------
+// let factorialNumber = +prompt("enter a factorial calculate number");
+
+// const factorial = (fact) => {
+//   if (fact === 0) {
+//     return 1;
+//   } else {
+//     return fact * factorial(fact - 1);
+//   }
+// };
+
+// let res = factorial(factorialNumber);
+// console.log(`the factorial of ${factorialNumber} is ${res}`);
 
 // -----------------------------------------------------------
 // let prom = +prompt("enter a number");
@@ -210,7 +215,6 @@
 
 // document.write(fact(num))
 
-
 // Q7: is string palindrrome?
 
 // let userValue = prompt("Enter your palindrome word");
@@ -226,7 +230,6 @@
 // } else{
 //     console.log("its is not palindrome value")
 // }
-
 
 // console.log(isCheackValue)
 
@@ -252,11 +255,11 @@
 
 // Q8 : find most repeated element or deleted from array?
 
-// let num = [2,4,9,10,110,10,2,4,2,4,5,110,555];
+let num = [2, 4, 9, 10, 110, 10, 2, 4, 2, 4, 5, 110, 555, 555, 555, 556];
 // let num = [1,2,3,4,4,5,6,5,6,7,9,0,10,100,101,20];
-// let uniquw = []
-// let forOff = []
-// let third = [];
+let uniquw = [];
+let forOff = [];
+let third = [];
 
 // for(let value of num){
 //     if(!forOff.includes(value)){
@@ -276,41 +279,39 @@
 //     }
 // }
 
-
 // for(let j = 0; j < num.length; j++){
 //     if(!third.includes(num[j])){
 //         third.push(num[j])
 //     }
 // }
 
-// console.log(uniquw, "<<< unique")
+// console.log(uniquw, "<<< unique");
 // console.log(forOff , "<<<< forOff")
 // console.log(third , "<<<< third")
 
 // Q9: find most repeated element  string?
 
 // function getCharString(str) {
-
-//     let map = {};
-//     str.split("").forEach(element => {
-//         map[element] = map[element] ? map[element] + 1 : 1
-//     });
-//     let max = 1
-//     let char = str[0]
-//     for (let k in map) {
-//         if (map[k] > max) {
-//             max = map[k]
-//             char = k
-//         }
+//   let map = {};
+//   str.split("").forEach((element) => {
+//     map[element] = map[element] ? map[element] + 1 : 1;
+//   });
+//   let max = 1;
+//   let char = str[0];
+//   for (let k in map) {
+//     if (map[k] > max) {
+//       max = map[k];
+//       char = k;
 //     }
-//     return char
+//   }
+//   return char;
 // }
 
-// let res =  getCharString("Hello World")
+// let res = getCharString("Hello World");
 
-// console.log(res)
+// console.log(res);
 
-// ---------------------------------- 
+// ----------------------------------
 
 // function mostReapetedChar(str) {
 //     let frequency = {};
@@ -342,9 +343,7 @@
 // let result = mostReapetedChar(inputString);
 // console.log(result, "<<<< result")
 
-
 // Q10: find most repeated element  array?
-
 
 // function mostRepeatedFunction(arr) {
 //     let frequency = {}
@@ -385,12 +384,18 @@
 
 //Q11 find the missing element or number in array without using any building function in javascript
 
-// let array = [1,2,3,5,6];
+// let array = [1,2,3,5,6, 4,8];
 
 // let total = ((array.length + 1) * (array.length +2)) / 2
 
 // for(let i = 0; i < array.length; i++){
 //     total = total - array[i];
+// }
+
+// let total = ((array.length + 1) * (array.length + 2)) / 2
+
+// for (let i = 0; i< array.length;i++){
+//     total = total - array[i]
 // }
 
 // console.log(total)
@@ -437,8 +442,6 @@
 
 // document.getElementById("orange").addEventListener("click", clickHandler("orange"))
 // document.getElementById("green").addEventListener("click", clickHandler("green"))
-
-
 
 // ------------------------ Object Oriented 4 Pillars ---------------------
 
