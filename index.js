@@ -255,11 +255,11 @@
 
 // Q8 : find most repeated element or deleted from array?
 
-let num = [2, 4, 9, 10, 110, 10, 2, 4, 2, 4, 5, 110, 555, 555, 555, 556];
-// let num = [1,2,3,4,4,5,6,5,6,7,9,0,10,100,101,20];
-let uniquw = [];
-let forOff = [];
-let third = [];
+// let num = [2, 4, 9, 10, 110, 10, 2, 4, 2, 4, 5, 110, 555, 555, 555, 556];
+// // let num = [1,2,3,4,4,5,6,5,6,7,9,0,10,100,101,20];
+// let uniquw = [];
+// let forOff = [];
+// let third = [];
 
 // for(let value of num){
 //     if(!forOff.includes(value)){
@@ -399,6 +399,57 @@ let third = [];
 // }
 
 // console.log(total)
+
+// ------------------------------------------- // Q12
+// Q12  Write a program that allows for an integer array to be passed in and will then output all of the pairs that sum up to 10.  Please provide a solution that allows for 1) output all pairs (includes duplicates and the reversed ordered pairs), 2) output unique pairs only once (removes the duplicates but includes the reversed ordered pairs), and 3) output the same combo pair only once (removes the reversed ordered pairs).
+//         For example passing in [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9] the following r
+// For example passing in [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9] the following results should occur:
+//             1) output all pairs would output: [1,9], [1,9], [4,6], [4,6], [5,5], [5,5], [5,5], [5,5], [5,5], [5,5], [6,4], [6,4] [9,1] , [9,1]
+//             2) output unique pairs only once would output: [1,9], [4,6], [5,5], [6,4], [9,1]
+//             3) output the same combo pair only once would output: [1,9], [4,6], [5,5]
+
+function findPairs(arr) {
+  let allPairs = [];
+  let uniquePairs = [];
+  let uniqueComboPairs = [];
+
+  // 1. Output all pairs
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (i !== j && arr[i] + arr[j] === 10) {
+        allPairs.push([arr[i], arr[j]]);
+      }
+    }
+  }
+
+  // 2. Unique Pairs Only Once (Remove Exact Duplicates, Keep Reversed)
+  allPairs.forEach((pair) => {
+    if (!uniquePairs.some((p) => p[0] === pair[0] && p[1] === pair[1])) {
+      uniquePairs.push(pair);
+    }
+  });
+
+  // 3. Unique Combo Pair Only Once (Remove Reversed Pairs)
+  allPairs.forEach((pair) => {
+    if (
+      !uniqueComboPairs.some(
+        (p) =>
+          (p[0] === pair[0] && p[1] === pair[1]) ||
+          (p[0] === pair[1] && p[1] === pair[0])
+      )
+    ) {
+      uniqueComboPairs.push(pair);
+    }
+  });
+
+  console.log("All Pairs:", allPairs);
+  console.log("Unique Pairs:", uniquePairs);
+  console.log("Unique Combo Pairs:", uniqueComboPairs);
+}
+
+// Test the function with the example array
+let arr = [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9];
+findPairs(arr);
 
 // ------------------------clusure--------------------------------
 
