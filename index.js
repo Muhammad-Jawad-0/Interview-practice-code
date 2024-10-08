@@ -424,9 +424,26 @@ function findPairs(arr) {
 
   // 2. Unique Pairs Only Once (Remove Exact Duplicates, Keep Reversed)
   allPairs.forEach((pair) => {
-    if (!uniquePairs.some((p) => p[0] === pair[0] && p[1] === pair[1])) {
+    if (
+      !uniquePairs.some((p) => {
+        console.log(
+          p[0],
+          "<<P[0]",
+          pair[0],
+          "<<<pair[0]",
+          p[1],
+          "<<p[1]",
+          pair[1],
+          "<<<<pair[1]"
+        );
+        return p[0] === pair[0] && p[1] === pair[1];
+      })
+    ) {
       uniquePairs.push(pair);
     }
+    // if (!uniquePairs.some((p) => p[0] === pair[0] && p[1] === pair[1])) {
+    //   uniquePairs.push(pair);
+    // }
   });
 
   // 3. Unique Combo Pair Only Once (Remove Reversed Pairs)
@@ -448,8 +465,93 @@ function findPairs(arr) {
 }
 
 // Test the function with the example array
+// let arr = [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9];
+// findPairs(arr);
+
+const pairs = (arr) => {
+  let allpairs = [];
+  let uniquePair = [];
+  let uniqueComboPair = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (i !== j && arr[i] + arr[j] === 10) {
+        allpairs.push([arr[i], arr[j]]);
+      }
+    }
+  }
+
+  allpairs.forEach((pair) => {
+    if (
+      !uniquePair.some((p) => {
+        return p[0] === pair[0] && p[1] === pair[1];
+      })
+    ) {
+      uniquePair.push(pair);
+    }
+  });
+
+  allpairs.forEach((pair) => {
+    if (
+      !uniqueComboPair.some((p) => {
+        return (
+          (p[0] === pair[0] && p[1] === pair[1]) ||
+          (p[0] === pair[1] && p[1] === pair[0])
+        );
+      })
+    ) {
+      uniqueComboPair.push(pair)
+    }
+  });
+
+  console.log(allpairs);
+  console.log(uniquePair);
+  console.log(uniqueComboPair);
+};
+
 let arr = [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9];
-findPairs(arr);
+
+pairs(arr);
+
+// ----------------------------------------------
+// function findPairs(arr) {
+//     function includesPair(pairs, pair) {
+//         return pairs.some(([a, b]) => (a === pair[0] && b === pair[1]) || (a === pair[1] && b === pair[0]));
+//     }
+
+//     // 1. Sab Pairs (Duplicates aur Reversed Pairs ke Saath)
+//     let allPairs = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === 10) {
+//                 allPairs.push([arr[i], arr[j]]);
+//             }
+//         }
+//     }
+//     console.log("Sab Pairs:", allPairs);
+
+//     // 2. Unique Pairs (Duplicates remove magar Reversed Pairs ke saath)
+//     let uniquePairs = [];
+//     allPairs.forEach(pair => {
+//         if (!uniquePairs.some(p => p[0] === pair[0] && p[1] === pair[1])) {
+//             uniquePairs.push(pair);
+//         }
+//     });
+//     console.log("Unique Pairs:", uniquePairs);
+
+//     // 3. Same Combo Pair Ek Martaba (Reversed Pairs remove)
+//     let uniqueComboPairs = [];
+//     allPairs.forEach(pair => {
+//         if (!includesPair(uniqueComboPairs, pair)) {
+//             uniqueComboPairs.push(pair);
+//         }
+//     });
+//     console.log("Unique Combo Pairs:", uniqueComboPairs);
+// }
+
+// // Test
+// let arr = [1, 1, 2, 4, 4, 5, 5, 5, 6, 7, 9];
+// findPairs(arr);
 
 // ------------------------clusure--------------------------------
 
